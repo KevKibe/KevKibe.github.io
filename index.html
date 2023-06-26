@@ -333,10 +333,15 @@
       <h2>Projects</h2>
       <p>My Projects</p>
       <br>
-      <h3 class="project-categories">Machine Learning</h3>
-      <hr>
+      <button onclick="filterProjects('machine-learning')">Tabular Machine Learning</button>
+      <button onclick="filterProjects('natural-language-processing')">Natural Language Processing</button>
+      <button onclick="filterProjects('computer-vision')">Computer Vision</button>
+      <br>  
     </div>
-
+    <hr>
+  <div id="machine-learning-projects">         
+    <h3 class="project-categories">Tabular Machine Learning</h3>
+    <hr>
     <div class="row">
       <div class="full-width ">
           <h4><a href="https://github.com/KevKibe/Data-Professions-Salary-Evaluation-and-Estimation-Project" target="_blank">Data Professions Salary Evaluation and Estimation Project
@@ -345,7 +350,7 @@
              salary ranges to offer candidates, as well as candidates who may be unsure about the salary ranges. I do this by using regression methods on 
             a public salary dataset collected anonymously from professionals all over the world in the Data Science Space.  </p>
             <ul class="actions special">
-              <li><a href="https://kevkibe-data-professions-salary-evaluation-and-estim-app-kpaxbq.streamlit.app/"   class="button" target="_blank">Live Demo</a></li>
+              <li><a href="https://kevkibe-data-professions-salary-evaluation-and-predi-app-j0lf8o.streamlit.app/"   class="button" target="_blank">Live Demo</a></li>
               <li><a href="https://github.com/KevKibe/Data-Professions-Salary-Evaluation-and-Estimation-Project" class="button" target="_blank">Github Repo</a></li>
             </ul>  
         </div>
@@ -357,7 +362,7 @@
             <h4><a href="https://github.com/KevKibe/Hospital-Patient-Length-of-Stay-Prediction" target="_blank">Hospital Patient Length of Stay Prediction 
             </a></h4>
             <p class="indented-paragraph"> Creating a solution to staff and resource management in hospitals by fitting a model that predicts the length of stay
-               of a patient using data on the patient and illness and deploying the model using Fast API through a Docker imageto Google Cloud Run.
+               of a patient using data on the patient and illness and deploying the model using Flask API through a Docker imageto Google Cloud Run.
                </p>
               <ul class="actions special">
                 <li><a href="https://github.com/KevKibe/Hospital-Patient-Length-of-Stay-Prediction" class="button" target="_blank">Github Repo</a></li>
@@ -389,7 +394,7 @@
           <div class="full-width ">
               <h4><a href="https://github.com/KevKibe/Credit-Card-Users-Churn-Prediction" target="_blank">Credit Card User Churn Prediction and Analysis
               </a></h4>
-              <p class="indented-paragraph"> Buildig a predictive model to identify customers who are at risk of attrition for a credit card service in order to find the key causes that drive attrition. 
+              <p class="indented-paragraph"> Building a predictive model to identify customers who are at risk of attrition for a credit card service in order to find the key causes that drive attrition. 
                 I then used the feature importances of the model to find out what makes customers attrite, this can help banks take appropriate actions to build better retention policies for customers.
                  </p>
                 <ul class="actions special">
@@ -429,7 +434,9 @@
               </div>
               <br>
                <hr>
-
+        </div>
+  
+        <div id="natural-language-processing-projects" class="hidden">
         <h3 class="project-categories">Natural Language Processing(NLP)</h3>
         <hr>
         <div class="row">
@@ -438,7 +445,7 @@
             <p class="indented-paragraph">An implementation of an LSTM Model used to predict the 
               Diagnostic and Corrective Action of faulty industrial Programming Logic Control(PLC) from a dataset containing that information to solve the problem of error correction that happens with these devices.</p>
               <ul class="actions special">
-                <li><a href="https://kevkibe-plc-device-diagnostic-and-corrective-action--app-z1yflj.streamlit.app/" class="button" target="_blank">Live Demo</a></li>
+                <li><a href="https://kevkibe-predictions-on-plc-data-using-nlp-methods-app-jlrdhd.streamlit.app/ class="button" target="_blank">Live Demo</a></li>
                 <li><a href="https://github.com/KevKibe/PLC-Device-Diagnostic-and-Corrective-Action-Prediction" class="button" target="_blank">Github Repo</a></li>
               </ul>  
           </div>
@@ -485,8 +492,10 @@
                     </ul>  
                 </div>
               </div>
+            </div>  
              <hr>
             
+        <div id="computer-vision-projects" class="hidden">
           <h3 class="project-categories">Computer Vision</h3>
            <hr>
           <div class="row">
@@ -547,8 +556,28 @@
                       </ul>  
                   </div>
                 </div>
+              </div>
                 <hr>
-
+                
+                <script>
+                  function filterProjects(category) {
+                      const machineLearningProjects = document.getElementById("machine-learning-projects");
+                      const naturalLanguageProcessingProjects = document.getElementById("natural-language-processing-projects");
+                      const computerVisionProjects = document.getElementById("computer-vision-projects");
+      
+                      machineLearningProjects.classList.add("hidden");
+                      naturalLanguageProcessingProjects.classList.add("hidden");
+                      computerVisionProjects.classList.add("hidden");
+      
+                      if (category === "machine-learning") {
+                          machineLearningProjects.classList.remove("hidden");
+                      } else if (category === "natural-language-processing") {
+                          naturalLanguageProcessingProjects.classList.remove("hidden");
+                      } else if (category === "computer-vision") {
+                          computerVisionProjects.classList.remove("hidden");
+                      }
+                  }
+              </script>
 
 
   </div>

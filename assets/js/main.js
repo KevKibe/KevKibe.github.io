@@ -230,6 +230,34 @@
     height: '90vh'
   });
 
+  function filterProjects(category) {
+    const machineLearningProjects = document.getElementById("machine-learning-projects");
+    const naturalLanguageProcessingProjects = document.getElementById("natural-language-processing-projects");
+    const computerVisionProjects = document.getElementById("computer-vision-projects");
+
+    machineLearningProjects.classList.add("hidden");
+    naturalLanguageProcessingProjects.classList.add("hidden");
+    computerVisionProjects.classList.add("hidden");
+
+    if (category === "machine-learning") {
+      machineLearningProjects.classList.remove("hidden");
+    } else if (category === "natural-language-processing") {
+      naturalLanguageProcessingProjects.classList.remove("hidden");
+    } else if (category === "computer-vision") {
+      computerVisionProjects.classList.remove("hidden");
+    }
+  }
+
+  /**
+   * Event listener for project category buttons
+   */
+  on("click", ".category-button", function(e) {
+    const category = e.target.getAttribute("data-category");
+
+    // Call filterProjects function with the selected category
+    filterProjects(category);
+  }, true);
+
   /**
    * Portfolio details slider
    */
